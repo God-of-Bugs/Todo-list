@@ -14,7 +14,7 @@ function TodoFilters({
 
   return (
     <div className="filters-container">
-      <div className="filter-buttons" role="group" aria-label="Filter tasks">
+      <div className="segmented-control" role="group" aria-label="Filter tasks">
         {filters.map(({ key, label, count }) => (
           <button
             key={key}
@@ -23,18 +23,29 @@ function TodoFilters({
             onClick={() => onFilterChange(key)}
             aria-pressed={currentFilter === key}
           >
-            <span>{label}</span>
-            <span className="filter-badge" aria-label={`${count} ${label.toLowerCase()} tasks`}>
+            <span className="filter-label">{label}</span>
+            <span
+              className="filter-count"
+              aria-label={`${count} ${label.toLowerCase()} tasks`}
+            >
               {count}
             </span>
           </button>
         ))}
       </div>
 
-      <div className="summary-bar">
-        <span className="summary-text">
-          <strong>{pendingCount}</strong> pending &bull; <strong>{completedCount}</strong> completed
-        </span>
+      <div className="stats-bar">
+        <div className="stats-group">
+          <span className="stat-chip">
+            <span className="stat-dot dot-pending" aria-hidden="true"></span>
+            <strong>{pendingCount}</strong> pending
+          </span>
+          <span className="stat-separator" aria-hidden="true">&bull;</span>
+          <span className="stat-chip">
+            <span className="stat-dot dot-completed" aria-hidden="true"></span>
+            <strong>{completedCount}</strong> completed
+          </span>
+        </div>
 
         {completedCount > 0 && (
           <button
@@ -43,7 +54,7 @@ function TodoFilters({
             onClick={onClearCompleted}
             aria-label="Clear all completed tasks"
           >
-            Clear Completed
+            Clear completed
           </button>
         )}
       </div>
