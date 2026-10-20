@@ -2,6 +2,10 @@
 
 A modern, responsive Todo List application built with React and Vite. Converted from a vanilla JavaScript implementation into a component-based single-page application with complete CRUD functionality, filter views, due-date tracking, and local storage persistence.
 
+## Live Demo
+
+- **GitHub Pages**: [https://god-of-bugs.github.io/Todo-list/](https://god-of-bugs.github.io/Todo-list/)
+
 ## Features
 
 - **Add tasks**: Create new tasks with optional due dates and Enter key submission.
