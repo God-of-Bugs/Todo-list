@@ -18,6 +18,7 @@ A modern, responsive Todo List application built with React and Vite. Converted 
 - **localStorage persistence**: Automatic data persistence under the `todos` key with backward-compatible migration for legacy data and error recovery.
 - **Responsive & accessible design**: Mobile-first layout adaptable from 320px to desktop screens with accessible keyboard navigation and semantic HTML.
 
+  
 ## Tech Stack
 
 - **React** (Functional components & hooks)
